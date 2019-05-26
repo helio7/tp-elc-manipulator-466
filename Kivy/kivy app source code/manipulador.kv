@@ -1,0 +1,103 @@
+#:kivy 1.9.1
+#:import NoTransition kivy.uix.screenmanager.NoTransition
+
+<sm>:
+    transition: NoTransition()
+
+    Main_Screen:
+        name: "main screen"
+
+<Main_Screen>:
+    connect_button: connect_button
+    avance_btn: avance_btn
+    retr_btn: retr_btn
+    giro_negativo_btn: giro_negativo_btn
+    giro_positivo_btn: giro_positivo_btn
+    zaxis_btn: zaxis_btn
+    vacuum_btn: vacuum_btn
+    instructions_label: instructions_label
+    notification_label: notification_label
+    
+    FloatLayout:
+        Button:
+            id: avance_btn
+            text: "Avance"
+            size_hint: 0.3, 0.15
+            pos_hint: { "x": 1.35, "y": 0.725 }
+            on_press: root.enviar_orden(1)
+            on_release: root.enviar_orden(0)
+            disabled: True
+        Button:
+            id: retr_btn
+            text: "Retroceso"
+            size_hint: 0.3, 0.15
+            pos_hint: { "x": 1.35, "y": 0.375 }
+            on_press: root.enviar_orden(2)
+            on_release: root.enviar_orden(0)
+            disabled: True
+        Button:
+            id: giro_negativo_btn
+            text: "Giro -x"
+            size_hint: 0.3, 0.15
+            pos_hint: { "x": 1.2, "y": 0.55 }
+            on_press: root.enviar_orden(3)
+            on_release: root.enviar_orden(0)
+            disabled: True
+        Button:
+            id: giro_positivo_btn
+            text: "Giro +x"
+            size_hint: 0.3, 0.15
+            pos_hint: { "x": 1.5, "y": 0.55 }
+            on_press: root.enviar_orden(4)
+            on_release: root.enviar_orden(0)
+            disabled: True
+        Button:
+            id: zaxis_btn
+            text: "Z-axis valve"
+            size_hint: 0.45, 0.1
+            pos_hint: { "x": 1.55, "y": 0.125 }
+            on_press: root.enviar_orden(5)
+            on_release: root.enviar_orden(0)
+            disabled: True
+        Button:
+            id: vacuum_btn
+            text: "Vacuum valve"
+            size_hint: 0.45, 0.1
+            pos_hint: { "x": 1.55, "y": 0.0 }
+            on_press: root.enviar_orden(6)
+            on_release: root.enviar_orden(0)
+            disabled: True
+
+        Button:
+            id: connect_button
+            text: "Conectar"
+            size_hint: 0.3, 0.1
+            pos_hint: { "x": 0.0, "y": 0.0 }
+            on_press: root.connect()
+
+        ScrollableLabel:
+            id: instructions_label
+            text: "   - Encienda la maquina.\n   - Vincule mediante Bluetooth este telefono con la maquina.\n   - Presione el boton 'Conectar' de esta aplicacion."
+            font_size: 18
+            size_hint: 0.9, 0.8
+            pos_hint: { "x": 0.05 , "y": 0.1 }
+
+        Label:
+            id: notification_label
+            text: ""
+            size_hint: 0.01, 0.01
+            pos_hint: { "x":0.5, "y":0.3 }
+
+<ScrollableLabel>:
+    font_size: 20
+    Label:
+        size_hint_y: None
+        height: self.texture_size[1]
+        text_size: self.width, None
+        text: root.text
+        font_size: root.font_size
+
+<BackButton>:
+    text: "Back"
+    size_hint: (0.4 , 0.05)
+    pos_hint: { "x": 0.3 , "y": 0.0 }
