@@ -11,6 +11,9 @@ The project consists in:
 
 The Bluetooth part of the projects is optional. You could control the module simply using some of the digital inputs of the Arduino, with cables as switches in a protoboard for example. Even you could use an Arduino UNO, if you find the way of course, because the project is tought to work with Bluetooth.
 
+Link to the app:
+
+
 Instructions for use (once installed the Arduino inside the device):
 - Turn on the manipulator.
 - Link your smartphone with the Bluetooth module inside the manipulator (just the first time).
@@ -29,7 +32,7 @@ Installation instructions:
 - Disconnect the manipulator from the energy supply.
 - Disarm and open the manipulator.
 - Unplug all the connectors of the main board (the big, square one in the center) to work easier.
-- Locate the ports labeled as J1, J6 and J9. Connect them to the Arduino following the indications in the pages A, B and C.
+- Locate the ports labeled as J1, J6 and J9. Connect them to the Arduino following the indications in the uploaded photos.
 - Locate the connectors J6 and J9. Connect them as indicated in the pages.
 - Connect the Bluetooth Module to the Arduino.
 - Connect all the remaining connectores to their respectives ports. Some connectors (J6 and J9) will remain "in the air", you can connect them to their ports using protoboard cables.
